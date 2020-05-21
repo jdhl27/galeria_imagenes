@@ -1,42 +1,20 @@
 /* var carpeta = "products";
-var images = ["1.jpeg", "2.jpg", "3.png"];
+var images = ["1.jpg", "2.jpg", "3.jpg, 4.jpg", "5.jpg", "6.jpg, 7.jpg"];
 var div = document.getElementById('imagenes')
 images.forEach(function(img) {
   var image = new Image();
   image.src = carpeta + "/" + img;
   image.onerror = error;
-
-  var cadena = '<img src="'+image.src+'">';
-  div.innerHTML += cadena;
+  divImages.innerHTML += '<article class="article"> ' +
+                      '<img src="' + image.src + '">' + 
+                      '<a download target="_blank" href="'+image.src +'">Descargar</a>'
+                    '</article>';
 });
 
+let divErrores = document.getElementById('errores');
 function error(e) {
-  console.log(e)
-} */
-
-/* var imagen=1;
-var div = document.getElementById('imagenes')
-var erro = false
-while(erro == false)
-{
-   erro == false
-   var carpeta= "products";
-   var img = new Image();
-   img.src = carpeta+"/"+imagen+".jpg";
-   img.onerror = error(imagen);
-   imagen++;
-
-   var cadena = '<article class="article"><img src="'+img.src+'"></article>';
-   div.innerHTML += cadena;
-}
-
-function error(numero)
-{
-  erro = true;
-  total=numero
-  console.log(total);
-  
-} */
+  divErrores.innerHTML += '<h4>~ La siguiente imagen presenta algún error: ' + e.path[0].src+'</h4>';
+}  */
 
 let n = 9; // Numero de imagenes
 let carpeta = "products"; // Nombre de la carpeta
