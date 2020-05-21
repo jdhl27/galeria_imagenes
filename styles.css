@@ -8,7 +8,7 @@
 .article {
   padding: 24px;
   margin: 32px;
-  width: 18%;
+  width: 22%;
   color: black;
   background-color: white;
   border: 1px solid #dcdcdc;
@@ -25,6 +25,8 @@
 #imagenes{
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  width: 80%;
 }
 
 a{
@@ -39,5 +41,20 @@ a{
 }
 
 a:hover{
-  background-color: #FF9800;
+  background-color: #eabd7b;
+  box-shadow: -1px 0 7px 1px orange;
+}
+
+#errores{
+  width: 70%;
+  background-color: #ed143d21;
+  padding: 22px;
+  border: 1px solid #fd9e9e;
+  border-radius: 19px;
+  margin: 0 auto;
+}
+
+#errores>h4{
+  margin: 0;
+  font-family: monospace;
 }

@@ -38,42 +38,23 @@ function error(numero)
   
 } */
 
-/* let n = 7; //numero de imagenes
-let carpeta = "products";
-let div = document.getElementById('imagenes');
-for (let i = 1; i<= n+1; i++){
+let n = 9; // Numero de imagenes
+let carpeta = "products"; // Nombre de la carpeta
+let divImages = document.getElementById('imagenes'); // Haciendo 
+for (let i = 1; i<= n; i++){
   var image = new Image();
   image.src = carpeta + "/" + i + ".jpg";
   image.onerror = error;
-  div.innerHTML += '<article class="article"> ' +
-                      '<img src="' + image.src + '">' + 
-                      '<a download="'+ image.src +'" href="'+image.src +'">Descargar</a>'
-                    '</article>';
-}
-
-function error(e) {
-  console.log(e)
-  err = true
-} */
-
-let carpeta = "products";
-let div = document.getElementById('imagenes');
-var err = false;
-let i = 1;
-while(err == false)
-{
-  var image = new Image();
-  image.src = carpeta + "/" + (i+1) + ".jpg";
-  image.onerror = function(){
-    err = true
-  };
-  div.innerHTML += '<article class="article"> ' +
+  divImages.innerHTML += '<article class="article"> ' +
                       '<img src="' + image.src + '">' + 
                       '<a download target="_blank" href="'+image.src +'">Descargar</a>'
                     '</article>';
-  i = i+1;
-  if (i > 7){
-    err = true
-  }
 }
+
+let divErrores = document.getElementById('errores');
+function error(e) {
+  divErrores.innerHTML += '<h4>~ La siguiente imagen presenta algún error: ' + e.path[0].src+'</h4>';
+} 
+
+
 
